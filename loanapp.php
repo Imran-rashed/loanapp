@@ -51,7 +51,59 @@ add_options_page('Loan Application', 'Loan Application', 'manage_options', __FIL
 
 function loanapp_admin()
 {
-echo "Loan Application";
+?>
+<div style="margin-top:20px;">
+                <h3>This is my first custom plugin admin panel</h3>
+                <hr/>
+                
+<table class="widefat">
+
+<thead>
+<tr>
+<th>Post Title</th>
+<th>Post ID</th>
+</tr>
+</thead>
+                       
+<tfoot>
+<tr>
+<th>Post Title</th>
+<th>Post ID</th>
+</tr>
+</tfoot>
+
+
+
+<tbody>
+
+<?php
+global $wpdb;
+$posts = $wpdb->get_results("SELECT * from ".$wpdb->prefix."loanapp");
+
+if(!empty($posts)){
+
+foreach($posts as $post){
+echo "
+<tr>
+<td>'".$post->loanapp_id."'</td>
+<td>'".$post->personal_information."'</td>
+</tr>
+";
+}
+}
+else
+{
+echo "<tr><td colspan='2'>No Data Found!</td></tr>";
+}
+?>
+
+</tbody>
+
+
+
+</table>                	
+</div>
+<?php
 }
 
 
