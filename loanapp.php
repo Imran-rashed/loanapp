@@ -106,5 +106,20 @@ echo "<tr><td colspan='2'>No Data Found!</td></tr>";
 <?php
 }
 
+/* front-end part */
 
+function loanapp_apply()
+{
+include('frontend/loanapply.php');
+
+if(isset($_POST['loanapply']))
+{
+var_dump($_POST);
+}
+
+return $data;
+}
+
+add_shortcode('loanform', 'loanapp_apply');
+/* end front-end part */
 ?>
