@@ -20,26 +20,8 @@ register_activation_hook( __FILE__, 'loanapp_activate' );
 function loanapp_activate()
 {
 global $wpdb;
-$table_name=$wpdb->prefix.'loanapp';
 $charset_collate = $wpdb->get_charset_collate();
-
-$sql = "CREATE TABLE IF NOT EXISTS $table_name (
-		loanapp_id int(11) NOT NULL AUTO_INCREMENT,
-  		personal_information text,
-  		residence_information text,
-  		employment_information text,
-  		finance_information text,
-  		banking_information text,
-		application_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  		status tinyint(2) DEFAULT '0',
-  		user_id int(11) NOT NULL,
-		PRIMARY KEY id (loanapp_id)
-	) $charset_collate;";
-
-require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-dbDelta( $sql );
-
-
+include('data/data.php');
 //add_option( 'loan_app_version', $loan_app_version );
 }
 
