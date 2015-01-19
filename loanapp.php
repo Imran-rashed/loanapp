@@ -92,14 +92,15 @@ echo "<tr><td colspan='2'>No Data Found!</td></tr>";
 
 function loanapp_apply()
 {
-include('frontend/loanapply.php');
 
 if(isset($_POST['loanapply']))
 {
 var_dump($_POST);
 }
-
-return $data;
+ob_start(); 
+include('frontend/loanapply.php');
+return ob_get_clean();
+//return $data;
 }
 
 add_shortcode('loanform', 'loanapp_apply');
