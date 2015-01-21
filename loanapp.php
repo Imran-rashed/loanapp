@@ -33,59 +33,15 @@ add_options_page('Loan Application', 'Loan Application', 'manage_options', __FIL
 
 function loanapp_admin()
 {
+wp_enqueue_script( 'jquerydataTablesminjs', plugins_url( '/js/jquery.dataTables.min.js', __FILE__ ));
+wp_enqueue_style( 'jquerydataTablescss', plugins_url( '/css/jquery.dataTables.css', __FILE__ ) );
 ?>
 <div style="margin-top:20px;">
-                <h3>This is my first custom plugin admin panel</h3>
-                <hr/>
-                
-<table class="widefat">
-
-<thead>
-<tr>
-<th>Post Title</th>
-<th>Post ID</th>
-</tr>
-</thead>
-                       
-<tfoot>
-<tr>
-<th>Post Title</th>
-<th>Post ID</th>
-</tr>
-</tfoot>
-
-
-
-<tbody>
-
-<?php
-global $wpdb;
-$posts = $wpdb->get_results("SELECT * from ".$wpdb->prefix."loanapp");
-
-if(!empty($posts)){
-
-foreach($posts as $post){
-echo "
-<tr>
-<td>'".$post->loanapp_id."'</td>
-<td>'".$post->personal_information."'</td>
-</tr>
-";
-}
-}
-else
-{
-echo "<tr><td colspan='2'>No Data Found!</td></tr>";
-}
-?>
-
-</tbody>
-
-
-
-</table>                	
-</div>
-<?php
+<h3>This is my first custom plugin admin panel</h3>
+<hr/>
+<?php 
+wp_enqueue_script('jquery-ui-datepicker');
+include('backend/grid.php');
 }
 
 /* front-end part */
@@ -95,8 +51,10 @@ function loanapp_apply()
 
 if(isset($_POST['loanapply']))
 {
-var_dump($_POST);
+var_dump($_POST['Personal']);
 }
+wp_enqueue_script('jquery-ui-datepicker');
+wp_enqueue_style('jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css');
 ob_start(); 
 include('frontend/loanapply.php');
 return ob_get_clean();
@@ -105,4 +63,8 @@ return ob_get_clean();
 
 add_shortcode('loanform', 'loanapp_apply');
 /* end front-end part */
+/* ajax grid */
+include('backend/script/dataprocessing.php');
+/* end ajax grid */
+
 ?>

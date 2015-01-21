@@ -52,7 +52,7 @@ $data='<h2>Loan Application Form</h2>
                     <div class="form-group">    
                         
                         <div class="col-xs-3">
-                            <select class="form-control" name="title">
+                            <select class="form-control" name="Personal[title]">
                                 <option selected="selected" value="">Select your title</option>
                                 <option value="Mr">Mr</option>
                                 <option value="Miss">Miss</option>
@@ -62,15 +62,15 @@ $data='<h2>Loan Application Form</h2>
                         </div> 
 
                         <div class="col-xs-3">
-                            <input name="fname" class="form-control" placeholder="First Name" type="text">
+                            <input name="Personal[fname]" class="form-control" placeholder="First Name" type="text">
                         </div>
 
                         <div class="col-xs-3">
-                            <input name="mname" class="form-control" placeholder="Middle Name" type="text">
+                            <input name="Personal[mname]" class="form-control" placeholder="Middle Name" type="text">
                         </div>
 
                         <div class="col-xs-3">
-                            <input name="lname" class="form-control" placeholder="Last Name" type="text">
+                            <input name="Personal[lname]" class="form-control" placeholder="Last Name" type="text">
                         </div>   
 
                     </div>
@@ -79,7 +79,7 @@ $data='<h2>Loan Application Form</h2>
                     <div class="form-group"> 
 
                         <div class="col-xs-4">
-                            <select class="form-control" name="marital">
+                            <select class="form-control" name="Personal[marital]">
                                 <option selected="selected" value="">Marital Status</option>
                                 <option value="Divorced">Divorced</option>
                                 <option value="Other">Other</option>
@@ -90,11 +90,11 @@ $data='<h2>Loan Application Form</h2>
                         </div>
 
                         <div class="col-xs-4">
-                            <input name="dateof_birth" class="form-control" placeholder="Date of birth" type="text">
+                            <input name="Personal[date_of_birth]" class="common_picker form-control" placeholder="Date of birth" type="text">
                         </div>
 
                         <div class="col-xs-4">
-                            <input name="cell_phone" class="form-control" placeholder="Cell phone number" type="text">
+                            <input name="Personal[cell_phone]" class="form-control" placeholder="Cell phone number" type="text">
                         </div>   
 
                     </div>   
@@ -103,64 +103,40 @@ $data='<h2>Loan Application Form</h2>
                     <div class="form-group"> 
 
                         <div class="col-xs-4">
-                            <input name="email" class="form-control" placeholder="Email address" type="email">
+                            <input name="Personal[email]" class="form-control" placeholder="Email address" type="email">
                         </div>
 
                         <div class="col-xs-4">
-                            <input name="sin_number" class="form-control" placeholder="Sin Number" type="text">
+                            <input name="Personal[sin_number]" class="form-control" placeholder="Sin Number" type="text">
                         </div>
 
                         <div class="col-xs-4">
-                            <input name="driving_licence" class="form-control" placeholder="Driving licence number" type="text">
+                            <input name="Personal[driving_licence]" class="form-control" placeholder="Driving licence number" type="text">
                         </div>   
 
                     </div>    
 
-                    <div class="form-group"> 
-
-                        <div class="col-xs-12">
-                            <textarea name="comments" class="form-control" rows="3" placeholder="Your Comments"></textarea>
-                        </div>  
-
-                    </div> <!-- Personal info end here -->
+                     <!-- Personal info end here -->
 
 
 
                     <h4>Current Residence</h4>
-                    <hr>
+                    <hr>                       
 
                     <div class="form-group"> 
 
-                        <div class="col-xs-12">
-                            <select class="form-control" name="address_type">
-                                <option selected="selected" value="">Address Type</option>
-                                <option value="po box">PO Box</option>
-                                <option value="rural route">Rural Route</option>
-                                <option value="Standard">Standard</option>
-                            </select>
-                        </div>  
-
-                    </div>   
-
-                    <div class="form-group"> 
-
-                        <div class="col-xs-3">
-                            <input name="apartment_num" class="form-control" placeholder="Apartment number" type="number">
+                        <div class="col-xs-4">
+                            <input name="apartment_num" class="form-control" placeholder="Apartment number">
                         </div>
 
-                        <div class="col-xs-3">
-                            <input value="0" name="houseno_boxno" class="form-control" placeholder="House No/ Box No" type="number">
+                        <div class="col-xs-4">
+                            <input name="houseno_boxno" class="form-control" placeholder="House No/ Box No">
                         </div>
 
-                        <div class="col-xs-3">
+                        <div class="col-xs-4">
                             <input name="street_name" class="form-control" placeholder="Street Name" type="text">
                         </div>   
-
-                        <div class="col-xs-3">
-                            <select class="form-control" name="street_type">
-                                <option selected="selected" value="">Street Type</option>
-                            </select>
-                        </div>  
+                          
 
                     </div>  
 
@@ -225,23 +201,18 @@ $data='<h2>Loan Application Form</h2>
 
                     <div class="form-group"> 
 
-                        <div class="col-xs-3">
+                        <div class="col-xs-4">
                             <input name="previous_apartment_num" class="form-control" placeholder="Apartment number" type="number">
                         </div>
 
-                        <div class="col-xs-3">
+                        <div class="col-xs-4">
                             <input name="previous_houseno_boxno" class="form-control" placeholder="House No/ Box No" type="number">
                         </div>
 
-                        <div class="col-xs-3">
+                        <div class="col-xs-4">
                             <input name="previous_street_name" class="form-control" placeholder="Street Name" type="text">
                         </div>   
-
-                        <div class="col-xs-3">
-                            <select class="form-control" name="previous_street_type">
-                                <option selected="selected" value="">Street Type</option>
-                            </select>
-                        </div>  
+                          
 
                     </div>  
 
@@ -741,7 +712,7 @@ $data='<h2>Loan Application Form</h2>
                         </div>
 
                         <div class="col-xs-4">
-                            <input name="co_dateof_birth" class="form-control" placeholder="Date of birth" type="text">
+                            <input name="co_date_of_birth" class="common_picker form-control" placeholder="Date of birth" type="text">
                         </div>
 
                         <div class="col-xs-4">
@@ -767,13 +738,7 @@ $data='<h2>Loan Application Form</h2>
 
                     </div>    
 
-                    <div class="form-group"> 
-
-                        <div class="col-xs-12">
-                            <textarea name="co_comments" class="form-control" rows="3" placeholder="Your Comments"></textarea>
-                        </div>  
-
-                    </div> <!-- Co Personal info end here -->
+                     <!-- Co Personal info end here -->
 
 
 
@@ -795,23 +760,18 @@ $data='<h2>Loan Application Form</h2>
 
                     <div class="form-group"> 
 
-                        <div class="col-xs-3">
-                            <input name="co_apartment_num" class="form-control" placeholder="Apartment number" type="number">
+                        <div class="col-xs-4">
+                            <input name="co_apartment_num" class="form-control" placeholder="Apartment number">
                         </div>
 
-                        <div class="col-xs-3">
-                            <input name="co_houseno_boxno" class="form-control" placeholder="House No/ Box No" type="number">
+                        <div class="col-xs-4">
+                            <input name="co_houseno_boxno" class="form-control" placeholder="House No/ Box No">
                         </div>
 
-                        <div class="col-xs-3">
+                        <div class="col-xs-4">
                             <input name="co_street_name" class="form-control" placeholder="Street Name" type="text">
                         </div>   
-
-                        <div class="col-xs-3">
-                            <select class="form-control" name="co_street_type">
-                                <option selected="selected" value="">Street Type</option>
-                            </select>
-                        </div>  
+                       
 
                     </div>  
 
@@ -1356,7 +1316,14 @@ $data='<h2>Loan Application Form</h2>
     
      <script type="text/javascript">
         jQuery(document).ready(function(){
-            jQuery('#co-form-link').click(function(){
+            
+			jQuery('.common_picker').datepicker({
+        	dateFormat : 'dd/mm/yy',
+			changeMonth: true,
+			changeYear: true
+    		});
+			
+			jQuery('#co-form-link').click(function(){
                 jQuery('#co-form').slideToggle();
             });
         });
