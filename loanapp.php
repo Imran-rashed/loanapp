@@ -35,6 +35,7 @@ function loanapp_admin()
 {
 wp_enqueue_script( 'jquerydataTablesminjs', plugins_url( '/js/jquery.dataTables.min.js', __FILE__ ));
 wp_enqueue_style( 'jquerydataTablescss', plugins_url( '/css/jquery.dataTables.css', __FILE__ ) );
+wp_enqueue_style( 'maincss', plugins_url( '/css/main.css', __FILE__ ) );
 ?>
 <div style="margin-top:20px;">
 <h3>This is my first custom plugin admin panel</h3>
